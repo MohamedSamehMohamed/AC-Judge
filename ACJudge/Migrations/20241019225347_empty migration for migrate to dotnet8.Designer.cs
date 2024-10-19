@@ -4,6 +4,7 @@ using ACJudge.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ACJudge.Migrations
 {
     [DbContext(typeof(EntitiesContext))]
-    partial class EntitiesContextModelSnapshot : ModelSnapshot
+    [Migration("20241019225347_empty migration for migrate to dotnet8")]
+    partial class emptymigrationformigratetodotnet8
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
