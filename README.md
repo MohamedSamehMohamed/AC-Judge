@@ -6,10 +6,114 @@
 
 • AC Judge monitors your problem-solving performance and provides comprehensive statistics across all other online judges you have used.
 
+## Getting Started
+
+To get started with AC Judge, follow these simple steps:
+
+1. Clone the repository
+2. Configure your database connection in `appsettings.json`
+3. Run the application using Visual Studio or the .NET CLI
+
+## Features
+
+- **Problem Management**: Access problems from multiple online judges (Codeforces, AtCoder, LeetCode)
+- **Submission System**: Submit solutions and get real-time feedback
+- **User Authentication**: Secure sign up and sign in functionality
+- **Blog System**: Create and view blog posts
+- **Contests**: Create and participate in coding contests
+- **Groups**: Create and join groups for collaborative problem-solving
+- **Statistics**: Track your performance across different online judges
+- **Problem Solutions**: View and share problem solutions
+
 ## Technologies used 
 - [ASP.NET CORE](https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-6.0)
-
 - [Entity FrameWork Core](https://learn.microsoft.com/en-us/ef/)
+- [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/) for web scraping
+- [Bootstrap](https://getbootstrap.com/) for UI styling
+- [jQuery](https://jquery.com/) for client-side scripting
+
+## Installation/Setup
+
+### Prerequisites
+
+- [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+- [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+- [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) or any compatible IDE
+
+### Steps
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/AC-Judge.git
+   cd AC-Judge
+   ```
+
+2. **Configure Database Connection**
+   
+   Open `ACJudge/appsettings.json` and update the connection string:
+   ```json
+   "ConnectionStrings": {
+     "UserAccountsContextConnection": "Server=your_server;Database=ACJudge;User Id=your_username;Password=your_password;Trusted_Connection=False;MultipleActiveResultSets=True;"
+   }
+   ```
+
+3. **Restore NuGet Packages**
+   ```bash
+   dotnet restore
+   ```
+
+4. **Apply Database Migrations**
+   ```bash
+   cd ACJudge
+   dotnet ef database update
+   ```
+
+5. **Run the Application**
+   
+   Using .NET CLI:
+   ```bash
+   dotnet run
+   ```
+   
+   Or using Visual Studio:
+   - Open the solution file `ACJudge.sln`
+   - Press F5 to start debugging
+
+6. **Access the Application**
+   
+   Navigate to `https://localhost:5001` (or the port shown in your console) in your browser.
+
+## Project Structure
+
+```
+AC-Judge/
+├── ACJudge/                    # Main web application
+│   ├── Areas/                   # Identity and authentication area
+│   │   └── Identity/           # User authentication pages
+│   ├── Controllers/            # Application controllers
+│   ├── Data/                   # Database contexts and models
+│   ├── Dependency/             # Dependency injection setup
+│   ├── ExtensionMethods/       # Custom extension methods
+│   ├── Migrations/             # Database migrations
+│   ├── ViewModels/             # View models for views
+│   ├── Views/                  # Razor views
+│   ├── wwwroot/               # Static files (CSS, JS, images)
+│   ├── Program.cs              # Application entry point
+│   ├── Startup.cs              # Application startup configuration
+│   └── appsettings.json        # Application configuration
+│
+├── GetProblemsAPI/             # API for fetching problems from online judges
+│   ├── Controllers/            # API controllers
+│   ├── ProblemInfo.cs          # Problem information model
+│   ├── SeleniumOperations.cs   # Selenium web scraping operations
+│   ├── SubmissionStatus.cs     # Submission status tracking
+│   └── Program.cs              # API entry point
+│
+├── ACJudge.sln                # Solution file
+├── ERD.drawio                 # Entity Relationship Diagram
+├── UML.drawio                 # UML Diagram
+└── README.md                  # Project documentation
+```
 ## Project Demo Video
 [Here](https://youtu.be/T-FBJJw4nb8)
 ## Screen Shots
